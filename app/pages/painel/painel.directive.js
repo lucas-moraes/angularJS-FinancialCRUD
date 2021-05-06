@@ -10,13 +10,10 @@ angular
                     effects.animation();
                 } )();
 
-                //$scope.movimentacao = dataSource.getMoviment();
                 $scope.movimentacao = dataSource.getMoviment().then( response => $scope.movimentacao = response.data );
 
-                //$scope.data = dataSource.getDate();
                 $scope.data = dataSource.getDate().then( function ( response ) { $scope.data = response.data; } );
 
-                //$scope.categoria = dataSource.getCategory();
                 $scope.categoria = dataSource.getCategory().then( function ( response ) { $scope.categoria = response.data; } );
 
                 $scope.delete = function ( id ) {
