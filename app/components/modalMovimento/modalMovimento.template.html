@@ -1,0 +1,81 @@
+<div ng-app="modalMovimento" class="modal" ng-class="stateMovimento ? 'is-active' : ''">
+    <div class="modal-background"></div>
+    <div class="modal-card" style="width: 535px;">
+      <header class="modal-card-head has-background-warning">
+        <p class="modal-card-title" ng-bind="titleMovimento"></p>
+        <button ng-click="toggleMovimento()" class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body" >
+        <div class="columns">
+          <div class="column is-4">
+            <div class="field">
+              <label class="label is-small">Data</label>
+              <div class="constrol">
+              <input id="date" class="input is-small" type="date" value="{{dateMovimento}}"/>
+            </div>
+            </div>    
+          </div>
+          <div class="column is-4">
+            <div class="field">
+              <label class="label is-small">Categorias</label>
+              <div class="control">
+                <div class="select is-small">
+                  <select id="categoria">
+                    <option value='0' selected>Categoria</option>
+                    <option ng-repeat="cat in categoria.categoria" value="{{cat.id}}">{{cat.nome}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="field">
+              <label class="label is-small">Movimento</label>
+              <div class="control">
+                <div class="select is-small">
+                  <select id="tipo">
+                    <option value="entrada">Entrada de dinheiro</option>
+                    <option value="saida">Saída de dinheiro</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-3">
+            <div class="field">
+              <label class="label is-small">Valor</label>
+              <input 
+                class="input is-small" 
+                id="valor"
+                name="preco"
+                ng-model="model.preco"
+                money-mask
+                />
+            </div>
+          </div>
+          <div class="column is-9">
+            <div class="field">
+              <label class="label is-small">Descrição</label>
+              <input 
+                class="input is-small" 
+                id="descricao"
+                type="text"
+                />
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <footer class="modal-card-foot">
+        <div ng-if="buttonTitleMovimento == 'Registrar'">
+          <button class="button is-success" ng-click="registerMovimento( 'add' )" ng-bind="buttonTitleMovimento"></button>
+        </div>
+        <div ng-if="buttonTitleMovimento == 'Alterar'">
+          <button class="button is-success" ng-click="registerMovimento( 'update' )" ng-bind="buttonTitleMovimento"></button>
+        </div>
+        <button class="button" ng-click="toggleMovimento()">Cancelar</button>
+      </footer>
+    </div>
+</div>
