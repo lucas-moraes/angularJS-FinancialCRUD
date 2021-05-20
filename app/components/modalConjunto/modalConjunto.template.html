@@ -1,0 +1,39 @@
+<div ng-app="modalConjunto" class="modal" ng-class="stateConjunto ? 'is-active' : ''">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head has-background-warning">
+        <p class="modal-card-title">Adicionar conjuto de movimentos</p>
+        <button ng-click="toggleConjunto()" class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <thread>
+              <tr>
+                  <th>Data</th>
+                  <th>Categoria</th>
+                  <th>Tipo</th>
+                  <th class="has-text-right">Valor</th>
+                  <th class="has-text-centered">Opções</th>
+              </tr>
+          </thread>
+          <tbody ng-repeat="item in conjunto">
+            <tr class={{style(item.valor)}}>
+                <td><span class="is-size-6" ng-bind="item.dia + ' / ' + item.mes + ' / ' + item.ano"></span></td>
+                <td><span class="is-size-6" ng-bind="item.categoria"></span></td>
+                <td><span class="is-size-6" ng-bind="item.tipo"></span></td>
+                <td class="has-text-right"><span class="is-size-6" ng-bind="monetize(item.valor)"></span></td>
+                <td class="has-text-centered has-text-dark">
+                    <span class="icon ml-2 mr-2 button" ng-click="deleteItemConjunto($index)">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success" ng-click="addConjunto()">Lançar</button>
+        <button class="ml-2 button" ng-click="toggleConjunto()">Cancelar</button>
+      </footer>
+    </div>
+</div>

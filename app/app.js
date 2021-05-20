@@ -20,6 +20,7 @@ var app =
                                         './app/pages/painel/painel.directive.js',
                                         './app/components/modalMovimento/modalMovimento.directive.js',
                                         './app/components/modalCategorias/modalCategorias.directive.js',
+                                        './app/components/modalConjunto/modalConjunto.directive.js',
                                         './app/components/navbar/navbar.directive.js',
                                     ]
                                 } );

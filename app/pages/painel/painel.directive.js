@@ -10,7 +10,7 @@ angular
                     effects.animation();
                 } )();
 
-                $scope.movimentacao = dataSource.getMoviment().then( response => $scope.movimentacao = response.data );
+                $scope.movimentacao = dataSource.getMoviment().then( response => { $scope.movimentacao = response.data; } );
 
                 $scope.data = dataSource.getDate().then( function ( response ) { $scope.data = response.data; } );
 

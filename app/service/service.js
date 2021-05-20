@@ -32,10 +32,29 @@ angular
             } );
         };
 
+        this.filterConjunto = function () {
+            let date = new Date();
+
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+
+            let formdata = new FormData();
+            formdata.append( "month", month );
+            formdata.append( "year", year );
+
+            return $http( {
+                method: 'POST',
+                url: 'http://localhost:777/view/MovimentFilter.php',
+                data: formdata,
+                headers: { 'Content-Type': undefined }
+            } );
+        };
+
         this.movimentById = function ( id ) {
             let formdata = new FormData();
             formdata.append( "id", id );
 
+            //return { "id": "1449", "dia": "8", "mes": "2", "ano": "2021", "tipo": "saida", "categoria": "41", "descricao": "PAGO", "valor": "1715.68994140625" };
             return $http( {
                 method: 'POST',
                 url: 'http://localhost:777/view/MovimentGetById.php',
@@ -71,6 +90,7 @@ angular
 
         this.addItem = function () {
             let date = document.getElementById( 'date' ).value;
+            console.log( date );
             let categories = document.getElementById( 'categoria' );
             categories = categories.options;
             let categoryId = categories[ categories.selectedIndex ].value;
@@ -86,6 +106,30 @@ angular
             formdata.append( "category", categoryId );
             formdata.append( "description", description );
             formdata.append( "value", value );
+
+            return $http( {
+                method: 'POST',
+                url: 'http://localhost:777/view/MovimentReg.php',
+                data: formdata,
+                headers: { 'Content-Type': undefined }
+            } );
+
+        };
+
+        this.addConjunto = function ( categoryId, type, value ) {
+            let date = new Date();
+            let day = date.getDay();
+            let month = date.getMonth();
+            let year = date.getFullYear();
+            let valor = value < 0 ? value * -1 : value;
+            valor = Number( valor ).toFixed( 2 ).replace( '.', ',' ).replace( /(\d)(?=(\d{3})+\,)/g, "$1." );
+
+            let formdata = new FormData();
+            formdata.append( "date", `${ year }-${ month + 2 }-${ day }` );
+            formdata.append( "type", type );
+            formdata.append( "category", categoryId );
+            formdata.append( "description", " " );
+            formdata.append( "value", valor );
 
             return $http( {
                 method: 'POST',
