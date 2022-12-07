@@ -7,7 +7,7 @@
             <div class="select">
                 <select id="select_category">
                     <option value='0' selected>Categoria</option>
-                    <option ng-repeat="cat in categoria.categoria" value="{{cat.id}}">{{cat.nome}}</option>
+                    <option ng-repeat="cat in categoria.categoria" value="{{cat.id}}">{{cat.descricao}}</option>
                 </select>
             </div>
             <div class="select">
@@ -22,12 +22,16 @@
                     <option ng-repeat="ano in data.ano" value="{{ano.ano}}">{{ano.ano}}</option>
                 </select>
             </div>
-            <button class="button is-primary" ng-click="filterMoviment()"><i class="fas fa-filter mr-2"></i>Filtrar</button>
+            <button class="button is-primary" ng-click="filterMoviment()"><i
+                    class="fas fa-filter mr-2"></i>Filtrar</button>
         </div>
         <div>
-            <button class="button has-background-link-light" ng-click="toggleCategorias()"><i class="fas fa-plus mr-2"></i>Categorias</button>
-            <button class="button has-background-danger-light" ng-click="toggleConjunto()"><i class="fas fa-plus mr-2"></i>Conjunto</button>
-            <button class="button is-info" ng-click="toggleMovimento('register')"><i class="fas fa-plus mr-2"></i>Movimento</button>    
+            <button class="button has-background-link-light" ng-click="toggleCategorias()"><i
+                    class="fas fa-plus mr-2"></i>Categorias</button>
+            <button class="button has-background-danger-light" ng-click="toggleConjunto()"><i
+                    class="fas fa-plus mr-2"></i>Conjunto</button>
+            <button class="button is-info" ng-click="toggleMovimento('register')"><i
+                    class="fas fa-plus mr-2"></i>Movimento</button>
         </div>
     </div>
     <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
@@ -63,7 +67,7 @@
         </tbody>
     </table>
     <table style="display: flex;justify-content: flex-end;">
-        <tfoot class="table is-hoverable is-narrow is-bordered" >
+        <tfoot class="table is-hoverable is-narrow is-bordered">
             <tr align="right">
                 <td class='has-text-right'>Resultado</td>
                 <td class='has-text-right {{style(movimentacao.total)}}' ng-bind="monetize(movimentacao.total)"></td>

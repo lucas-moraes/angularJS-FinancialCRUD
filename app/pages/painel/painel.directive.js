@@ -3,7 +3,7 @@ angular
     .directive( 'painel', function () {
         return {
             restrict: 'AE',
-            templateUrl: 'http://localhost:777/app/pages/painel/painel.template.html',
+            templateUrl: 'http://localhost:8079/cloudcont/frontend/app/pages/painel/painel.template.html',
             controller: function ( $scope, dataSource, effects ) {
 
                 ( function () {
@@ -40,6 +40,7 @@ angular
                 };
 
                 $scope.monthTranslate = function ( arg ) {
+                    arg = arg.toString();
                     let monthTranslation = {
                         '1': 'janeiro',
                         '2': 'fevereiro',

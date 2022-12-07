@@ -1,26 +1,26 @@
 <div ng-app="modalCategorias" class="modal" ng-class="stateCategorias ? 'is-active' : ''">
-    <div class="modal-background"></div>
-    <div class="modal-card" style="width: 535px;">
-      <header class="modal-card-head has-background-warning">
-        <p class="modal-card-title">Categorias</p>
-        <button ng-click="toggleCategorias()" class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div class="content is-centered">
-          <div class="button is-white is-flex is-loading" ng-show="isLoading"></div>
-          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" ng-show="!isLoading">
-            <tbody ng-repeat="item in categoria.categoria">
-              <tr>
-                <td>{{item.nome}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-      <footer class="modal-card-foot">
-        <input class="input mr-2" type="text" placeholder="Categoria" id="addCategory">
-        <button class="button is-success" ng-click="register()">Adicionar</button>
-        <button class="button" ng-click="toggle()">Cancelar</button>
-      </footer>
-    </div>
+  <div class="modal-background"></div>
+  <div class="modal-card" style="width: 535px;">
+    <header class="modal-card-head has-background-warning">
+      <p class="modal-card-title">Categorias</p>
+      <button ng-click="toggleCategorias()" class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="content is-centered">
+        <div class="button is-white is-flex is-loading" ng-show="isLoading"></div>
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" ng-show="!isLoading">
+          <tbody ng-repeat="item in categoria.categoria">
+            <tr>
+              <td>{{item.descricao}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <input class="input mr-2" type="text" placeholder="Categoria" id="addCategory">
+      <button class="button is-success" ng-click="register()">Adicionar</button>
+      <button class="button" ng-click="toggle()">Cancelar</button>
+    </footer>
+  </div>
 </div>

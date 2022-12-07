@@ -3,7 +3,7 @@ angular
     .directive( 'modalMovimento', function () {
         return {
             restrict: 'AE',
-            templateUrl: 'http://localhost:777/app/components/modalMovimento/modalMovimento.template.html',
+            templateUrl: 'http://localhost:8079/cloudcont/frontend/app/components/modalMovimento/modalMovimento.template.html',
             controller: function ( $scope, dataSource, formats ) {
                 $scope.stateMovimento = false; //false
                 $scope.titleMovimento;
@@ -37,7 +37,8 @@ angular
                             ( function () {
                                 dataSource.movimentById( id )
                                     .then( function ( response ) {
-                                        let item = response.data;
+
+                                        let item = response.data[ 0 ];
 
                                         $scope.id = item.id;
                                         $scope.dateMovimento = formats.date( item.dia, item.mes, item.ano );

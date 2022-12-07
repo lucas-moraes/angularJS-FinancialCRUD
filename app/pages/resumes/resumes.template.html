@@ -1,77 +1,78 @@
 <div class="container" id="animation">
-    <div class="mt-2 mb-4">
-        <h4 class="subtitle is-4 has-text-grey">Resumos</h4>
-    </div>
-    <div class="tile is-ancestor">
-      <div class="tile is-vertical is-12">
-        <div class="tile">
-          <div class="tile is-parent is-vertical">
-            <article class="tile is-child box notification is-white">
-              <p class="title is-4">Movimento de {{mesNome}}</p>
-              <div class="columns" ng-repeat="items in dataGroup.resume">
-                <div class="column pt-1 pb-1 is-flex has-text-left" ng-class="items.valor > 0 ? style.positivo : style.negativo">
-                  <span class="is-size-6 pr-4" ng-if="items.valor > 0"><i class="fas fa-plus"></i></span>
-                  <span class="is-size-6 pr-4" ng-if="items.valor < 0"><i class="fas fa-minus"></i></span>
-                  <span class="is-size-6" ng-bind="items.categoria"></span>
-                </div>
-                <div class="column pt-1 pb-1 has-text-right" ng-class="items.valor > 0 ? style.positivo : style.negativo">
-                  <span class="is-size-6" ng-bind="number(items.valor)"></span>
-                </div>                
+  <div class="mt-2 mb-4">
+    <h4 class="subtitle is-4 has-text-grey">Resumos</h4>
+  </div>
+  <div class="tile is-ancestor">
+    <div class="tile is-vertical is-12">
+      <div class="tile">
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child box notification is-white">
+            <p class="title is-4">Movimento de {{mesNome}}</p>
+            <div class="columns is-hoverable" ng-repeat="items in dataGroup.resume">
+              <div class="column pt-1 pb-1 is-flex has-text-left"
+                ng-class="items.valor > 0 ? style.positivo : style.negativo">
+                <span class="is-size-7 pr-4" ng-if="items.valor > 0"><i class="fas fa-plus"></i></span>
+                <span class="is-size-7 pr-4" ng-if="items.valor < 0"><i class="fas fa-minus"></i></span>
+                <span class="is-size-7" ng-bind="items.categoria"></span>
               </div>
-              <div class="columns">
-                <div class="column has-text-left">
-                  <span class="is-size-7 pr-4"><i class="fas fa-equals"></i></span>
-                  <span class="is-7">Total</span>
-                </div>
-                <div class="column has-text-right" ng-class="dataGroup.totalResume > 0 ? style.positivo : style.negativo">
-                  <span class="is-7" ng-bind="number(dataGroup.totalResume)"></span>
-                </div>
+              <div class="column pt-1 pb-1 has-text-right" ng-class="items.valor > 0 ? style.positivo : style.negativo">
+                <span class="is-size-7" ng-bind="number(items.valor)"></span>
               </div>
-            </article>
-          </div>
-          <div class="tile is-parent is-vertical">
-            <article class="tile is-child box notification is-primary">
-              <p class="title is-4">Saldos Mensais</p>
-              <div class="columns" ng-repeat="items in dataGroup.groupMonth">
-                <div class="column pt-1 pb-1 is-flex has-text-left">
-                  <span class="is-size-6 pr-4" ng-if="items.valor > 0"><i class="fas fa-plus"></i></span>
-                  <span class="is-size-6 pr-4" ng-if="items.valor < 0"><i class="fas fa-minus"></i></span>
-                  <span class="is-size-6" ng-bind="items.mes"></span>
-                  <span class="is-size-6">/</span>
-                  <span class="is-size-6" ng-bind="items.ano"></span>
-                </div>
-                <div class="column pt-1 pb-1 has-text-right">
-                  <span class="is-size-6" ng-bind="number(items.valor)"></span>
-                </div>                
-              </div>  
-            </article>
-          </div>
-          <div class="tile is-parent">
-            <article class="tile is-child box notification is-info">
-              <p class="title is-4">Movimento de {{anoNome}}</p>
-              <div class="columns" ng-repeat="items in dataGroup.categoriesByYear">
-                <div class="column pt-1 pb-1 is-flex has-text-left">
-                  <span class="is-size-6 pr-4" ng-if="items.valor > 0"><i class="fas fa-plus"></i></span>
-                  <span class="is-size-6 pr-4" ng-if="items.valor < 0"><i class="fas fa-minus"></i></span>
-                  <span class="is-size-6" ng-bind="items.categoria"></span>
-                </div>
-                <div class="column pt-1 pb-1 has-text-right">
-                  <span class="is-size-6" ng-bind="number(items.valor)"></span>
-                </div>                
+            </div>
+            <div class="columns">
+              <div class="column has-text-left">
+                <span class="is-size-7 pr-4"><i class="fas fa-equals"></i></span>
+                <span class="is-7">Total</span>
               </div>
-              <div class="columns">
-                <div class="column has-text-left">
-                  <span class="is-size-7 pr-4"><i class="fas fa-equals"></i></span>
-                  <span class="is-7">Total</span>
-                </div>
-                <div class="column has-text-right">
-                  <span class="is-7" ng-bind="number(dataGroup.totalCategoriesByYear)"></span>
-                </div>
+              <div class="column has-text-right" ng-class="dataGroup.totalResume > 0 ? style.positivo : style.negativo">
+                <span class="is-7" ng-bind="number(dataGroup.totalResume)"></span>
               </div>
-            </article>
-          </div>
+            </div>
+          </article>
         </div>
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child box notification is-primary">
+            <p class="title is-4">Saldos Mensais</p>
+            <div class="columns" ng-repeat="items in dataGroup.groupMonth">
+              <div class="column pt-1 pb-1 is-flex has-text-left">
+                <span class="is-size-6 pr-4" ng-if="items.valor > 0"><i class="fas fa-plus"></i></span>
+                <span class="is-size-6 pr-4" ng-if="items.valor < 0"><i class="fas fa-minus"></i></span>
+                <span class="is-size-6" ng-bind="items.mes"></span>
+                <span class="is-size-6">/</span>
+                <span class="is-size-6" ng-bind="items.ano"></span>
+              </div>
+              <div class="column pt-1 pb-1 has-text-right">
+                <span class="is-size-6" ng-bind="number(items.valor)"></span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box notification is-info">
+            <p class="title is-4">Movimento de {{anoNome}}</p>
+            <div class="columns" ng-repeat="items in dataGroup.categoriesByYear">
+              <div class="column pt-1 pb-1 is-flex has-text-left">
+                <span class="is-size-7 pr-4" ng-if="items.valor > 0"><i class="fas fa-plus"></i></span>
+                <span class="is-size-7 pr-4" ng-if="items.valor < 0"><i class="fas fa-minus"></i></span>
+                <span class="is-size-7" ng-bind="items.categoria"></span>
+              </div>
+              <div class="column pt-1 pb-1 has-text-right">
+                <span class="is-size-7" ng-bind="number(items.valor)"></span>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column has-text-left">
+                <span class="is-size-7 pr-4"><i class="fas fa-equals"></i></span>
+                <span class="is-7">Total</span>
+              </div>
+              <div class="column has-text-right">
+                <span class="is-7" ng-bind="number(dataGroup.totalCategoriesByYear)"></span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </div>
+  </div>
+</div>
 </div>

@@ -5,40 +5,39 @@ var app =
             function ( $stateProvider, $urlRouterProvider, $locationProvider ) {
                 $urlRouterProvider.otherwise( "/painel" );
 
-                $locationProvider.html5Mode( true );
+                $locationProvider.html5Mode( false );
                 $locationProvider.hashPrefix( '' );
 
                 $stateProvider
                     .state( 'painel', {
                         url: '/painel',
-                        templateUrl: './app/pages/painel/index.html',
+                        templateUrl: 'http://localhost:8079/cloudcont/frontend/app/pages/painel/index.html',
                         resolve: {
                             cloudcontApp: function ( $ocLazyLoad ) {
                                 return $ocLazyLoad.load( {
                                     files: [
-                                        './app/service/service.js',
-                                        './app/pages/painel/painel.directive.js',
-                                        './app/components/modalMovimento/modalMovimento.directive.js',
-                                        './app/components/modalCategorias/modalCategorias.directive.js',
-                                        './app/components/modalConjunto/modalConjunto.directive.js',
-                                        './app/components/navbar/navbar.directive.js',
+                                        'http://localhost:8079/cloudcont/frontend/app/service/service.js',
+                                        'http://localhost:8079/cloudcont/frontend/app/pages/painel/painel.directive.js',
+                                        'http://localhost:8079/cloudcont/frontend/app/components/modalMovimento/modalMovimento.directive.js',
+                                        'http://localhost:8079/cloudcont/frontend/app/components/modalCategorias/modalCategorias.directive.js',
+                                        'http://localhost:8079/cloudcont/frontend/app/components/modalConjunto/modalConjunto.directive.js',
+                                        'http://localhost:8079/cloudcont/frontend/app/components/navbar/navbar.directive.js',
                                     ]
                                 } );
                             }
                         }
-
                     } )
 
                     .state( 'resumes', {
                         url: '/resumes',
-                        templateUrl: './app/pages/resumes/index.html',
+                        templateUrl: 'http://localhost:8079/cloudcont/frontend/app/pages/resumes/index.html',
                         resolve: {
                             cloudcontApp: function ( $ocLazyLoad ) {
                                 return $ocLazyLoad.load( {
                                     files: [
-                                        './app/service/service.js',
-                                        './app/pages/resumes/resumes.directive.js',
-                                        './app/components/navbar/navbar.directive.js'
+                                        'http://localhost:8079/cloudcont/frontend/app/service/service.js',
+                                        'http://localhost:8079/cloudcont/frontend/app/pages/resumes/resumes.directive.js',
+                                        'http://localhost:8079/cloudcont/frontend/app/components/navbar/navbar.directive.js'
                                     ]
                                 } );
                             }

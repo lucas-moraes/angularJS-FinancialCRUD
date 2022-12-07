@@ -3,7 +3,7 @@ angular
     .directive( 'resumes', function () {
         return {
             restrict: 'AE',
-            templateUrl: 'http://localhost:777/app/pages/resumes/resumes.template.html',
+            templateUrl: 'http://localhost:8079/cloudcont/frontend/app/pages/resumes/resumes.template.html',
             controller: function ( $scope, dataSource, formats, effects ) {
 
                 ( function () {
