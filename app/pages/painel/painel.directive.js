@@ -3,7 +3,7 @@ angular
     .directive( 'painel', function () {
         return {
             restrict: 'AE',
-            templateUrl: 'http://localhost:8079/cloudcont/frontend/app/pages/painel/painel.template.html',
+            templateUrl: 'http://localhost:8079/frontend/app/pages/painel/painel.template.html',
             controller: function ( $scope, dataSource, effects ) {
 
                 ( function () {

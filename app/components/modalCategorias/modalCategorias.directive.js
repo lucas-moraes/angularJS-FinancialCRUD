@@ -3,7 +3,7 @@ angular
     .directive( 'modalCategorias', function () {
         return {
             restrict: 'AE',
-            templateUrl: 'http://localhost:8079/cloudcont/frontend/app/components/modalCategorias/modalCategorias.template.html',
+            templateUrl: 'http://localhost:8079/frontend/app/components/modalCategorias/modalCategorias.template.html',
             controller: function ( $scope, dataSource ) {
                 $scope.stateCategorias = false; //false
                 $scope.isLoading = false;

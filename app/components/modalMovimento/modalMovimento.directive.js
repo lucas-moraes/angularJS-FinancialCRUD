@@ -3,7 +3,7 @@ angular
     .directive( 'modalMovimento', function () {
         return {
             restrict: 'AE',
-            templateUrl: 'http://localhost:8079/cloudcont/frontend/app/components/modalMovimento/modalMovimento.template.html',
+            templateUrl: 'http://localhost:8079/frontend/app/components/modalMovimento/modalMovimento.template.html',
             controller: function ( $scope, dataSource, formats ) {
                 $scope.stateMovimento = false; //false
                 $scope.titleMovimento;

@@ -3,7 +3,7 @@ angular
     .directive( 'modalConjunto', function () {
         return {
             restrict: 'AE',
-            templateUrl: 'http://localhost:8079/cloudcont/frontend/app/components/modalConjunto/modalConjunto.template.html',
+            templateUrl: 'http://localhost:8079/frontend/app/components/modalConjunto/modalConjunto.template.html',
             controller: function ( $scope, dataSource, formats ) {
                 $scope.stateConjunto = false; //false
 

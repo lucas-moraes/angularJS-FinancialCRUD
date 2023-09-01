@@ -2,16 +2,18 @@ angular
     .module('cloudcontApp')
     .service('dataSource', function ($http, $q) {
 
+        const api = '.';
+
         this.getMoviment = function () {
-            return $http.get('http://localhost:8079/cloudcont/backend/view/MovimentGet.php');
+            return $http.get(`${api}/backend/view/MovimentGet.php`);
         };
 
         this.getDate = function () {
-            return $http.get('http://localhost:8079/cloudcont/backend/view/DateGet.php');
+            return $http.get(`${api}/backend/view/DateGet.php`);
         };
 
         this.getCategory = function () {
-            return $http.get('http://localhost:8079/cloudcont/backend/view/CategoryGet.php');
+            return $http.get(`${api}/backend/view/CategoryGet.php`);
         };
 
         this.filterMoviment = function () {
@@ -26,7 +28,7 @@ angular
 
             return $http({
                 method: 'POST',
-                url: 'http://localhost:8079/cloudcont/backend/view/MovimentFilter.php',
+                url: `${api}/backend/view/MovimentFilter.php`,
                 data: formdata,
                 headers: { 'Content-Type': undefined }
             });
@@ -44,7 +46,7 @@ angular
 
             return $http({
                 method: 'POST',
-                url: 'http://localhost:8079/cloudcont/backend/view/MovimentFilter.php',
+                url: `${api}/backend/view/MovimentFilter.php`,
                 data: formdata,
                 headers: { 'Content-Type': undefined }
             });
@@ -57,7 +59,7 @@ angular
             //return { "id": "1449", "dia": "8", "mes": "2", "ano": "2021", "tipo": "saida", "categoria": "41", "descricao": "PAGO", "valor": "1715.68994140625" };
             return $http({
                 method: 'POST',
-                url: 'http://localhost:8079/cloudcont/backend/view/MovimentGetById.php',
+                url: `${api}/backend/view/MovimentGetById.php`,
                 data: formdata,
                 headers: { 'Content-Type': undefined }
             });
@@ -69,7 +71,7 @@ angular
 
             return $http({
                 method: 'POST',
-                url: 'http://localhost:8079/cloudcont/backend/view/MovimentDel.php',
+                url: `${api}/backend/view/MovimentDel.php`,
                 data: formdata,
                 headers: { 'Content-Type': undefined }
             });
@@ -82,7 +84,7 @@ angular
 
             return $http({
                 method: 'POST',
-                url: 'http://localhost:8079/cloudcont/backend/view/MovimentGetGroup.php',
+                url: `${api}/backend/view/MovimentGetGroup.php`,
                 data: formdata,
                 headers: { 'Content-Type': undefined }
             });
@@ -108,7 +110,7 @@ angular
 
             return $http({
                 method: 'POST',
-                url: 'http://localhost:8079/cloudcont/backend/view/MovimentReg.php',
+                url: `${api}/backend/view/MovimentReg.php`,
                 data: formdata,
                 headers: { 'Content-Type': undefined }
             });
@@ -135,7 +137,7 @@ angular
             let deferred = $q.defer();
             $http({
                 method: 'POST',
-                url: 'http://localhost:8079/cloudcont/backend/view/MovimentReg.php',
+                url: `${api}/backend/view/MovimentReg.php`,
                 data: formdata,
                 timeout: 1000,
                 headers: { 'Content-Type': undefined }
@@ -158,7 +160,7 @@ angular
 
             return $http({
                 method: 'POST',
-                url: 'http://localhost:8079/cloudcont/backend/view/CategoryReg.php',
+                url: `${api}/backend/view/CategoryReg.php`,
                 data: formdata,
                 headers: { 'Content-Type': undefined }
             });
@@ -185,7 +187,7 @@ angular
 
             return $http({
                 method: 'POST',
-                url: 'http://localhost:8079/cloudcont/backend/view/MovimentSet.php',
+                url: `${api}/backend/view/MovimentSet.php`,
                 data: formdata,
                 headers: { 'Content-Type': undefined }
             });
